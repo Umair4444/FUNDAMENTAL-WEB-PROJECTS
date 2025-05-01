@@ -1,0 +1,63 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 10rem;
+}
+
+.countdown_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.big-text {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0px 2rem;
+  font-weight: bold;
+}
+
+.countdown_el {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.countdown_el span {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 786px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .big-text {
+    font-size: 3rem;
+  }
+
+  .countdown_el span {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
