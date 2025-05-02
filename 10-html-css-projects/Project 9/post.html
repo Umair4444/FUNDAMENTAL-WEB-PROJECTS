@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Rise of Generative AI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f9fa;
+        --card-bg: #fff;
+        --text: #212529;
+        --subtext: #6c757d;
+        --accent: #0d6efd;
+        --border: #dee2e6;
+        --quote-bg: #f1f8ff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        font-size: 1.8rem;
+        line-height: 1.6;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      header {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 1.8rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .nav h1 {
+        font-size: 2.8rem;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 0 1.5rem;
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.8rem;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .nav-icons i {
+        margin-left: 2rem;
+        font-size: 2rem;
+        color: var(--subtext);
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .nav-icons i:hover {
+        color: var(--accent);
+      }
+
+      main {
+        max-width: 1500px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+      }
+
+      .post-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .post-meta {
+        font-size: 1.6rem;
+        color: var(--subtext);
+        margin-bottom: 1.5rem;
+      }
+
+      .post-title {
+        font-size: 3.6rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .post-banner {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+
+      .post-banner img {
+        flex: 1;
+        min-width: 280px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .post-banner img:hover {
+        transform: scale(1.01);
+      }
+
+      .post-body {
+        font-size: 1.8rem;
+      }
+
+      .post-body h3 {
+        font-size: 2.4rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .post-body p {
+        margin: 1.8rem 0;
+        line-height: 1.7;
+      }
+
+      blockquote {
+        background: var(--quote-bg);
+        border-left: 5px solid var(--accent);
+        margin: 2.5rem 0;
+        padding: 1.5rem 2rem;
+        color: #444;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+      }
+
+      pre {
+        background: #f1f1f1;
+        padding: 2rem;
+        overflow-x: auto;
+        border-radius: 8px;
+        font-family: monospace;
+        font-size: 1.6rem;
+        margin: 2rem 0;
+        border: 1px solid #e0e0e0;
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent);
+      }
+
+      .author span {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+
+      .comments-section {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .comments-section h3 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      .comment {
+        border-top: 1px solid var(--border);
+        padding: 1.8rem 0;
+      }
+
+      .comment:first-child {
+        border-top: none;
+      }
+
+      .comment strong {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 1.7rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 3rem 2rem;
+        font-size: 1.6rem;
+        color: var(--subtext);
+        background: #fff;
+        border-top: 1px solid var(--border);
+        margin-top: 4rem;
+      }
+
+      .footer-icons {
+        margin-top: 1.5rem;
+      }
+
+      .footer-icons i {
+        margin: 0 1.5rem;
+        font-size: 2.2rem;
+        color: var(--subtext);
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .footer-icons i:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .nav {
+          flex-wrap: wrap;
+          gap: 1.5rem;
+        }
+
+        .nav-links,
+        .nav-icons {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .nav-links a {
+          margin: 0;
+        }
+
+        .nav-icons i {
+          margin: 0;
+        }
+
+        .post-title {
+          font-size: 2.8rem;
+        }
+
+        .post-card,
+        .comments-section {
+          padding: 2rem;
+        }
+
+        .post-banner {
+          flex-direction: column;
+        }
+
+        .post-banner img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        html {
+          font-size: 58%;
+        }
+
+        .post-title {
+          font-size: 2.4rem;
+        }
+
+        .post-body h3 {
+          font-size: 2rem;
+        }
+
+        .post-card,
+        .comments-section {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <h1>GenAI Zone</h1>
+        <div class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="#">Articles</a>
+        </div>
+        <div class="nav-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article class="post-card">
+        <div class="post-meta">Posted by AlexSmith · April 28, 2025</div>
+        <h2 class="post-title">The Rise of Generative AI</h2>
+        <div class="post-banner">
+          <img
+            src="https://images.unsplash.com/photo-1666597107756-ef489e9f1f09?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdlbiUyMGFpfGVufDB8fDB8fHww"
+            alt="Generative AI Banner"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdlbiUyMGFpfGVufDB8fDB8fHww"
+            alt="Generative AI Banner"
+          />
+        </div>
+        <div class="post-body">
+          <p>
+            Generative AI is transforming industries by enabling machines to
+            create content—text, images, music, and more—with astonishing
+            realism.
+          </p>
+          <h3>What Is Generative AI?</h3>
+          <p>
+            Generative AI refers to AI systems capable of producing new data
+            samples that resemble a given dataset. Popular models include
+            OpenAI's GPT and Google's Imagen.
+          </p>
+          <p>
+            Unlike traditional AI, which focuses on prediction and
+            classification, generative AI goes a step further—it creates. These
+            systems are trained on massive datasets and learn the underlying
+            patterns and structures of the data to generate new, coherent
+            outputs.
+          </p>
+          <p>
+            For example, given a prompt like
+            <em>“Write a poem about the ocean,”</em> a generative model can
+            craft a completely original poem with rhythm, context, and
+            creativity. Similarly, in image generation, tools like DALL·E can
+            transform a textual description into a detailed image that has never
+            existed before.
+          </p>
+          <p>
+            Generative AI combines the power of deep learning, natural language
+            processing, and creativity. Its ability to mimic human-like creation
+            opens up new opportunities across fields like art, education,
+            design, research, and entertainment.
+          </p>
+          <p>
+            However, with its power also come challenges—issues like
+            misinformation, copyright, and ethical usage continue to spark
+            important conversations around responsible AI development.
+          </p>
+
+          <blockquote>
+            “Generative AI doesn’t just analyze—it creates.”
+          </blockquote>
+
+          <section class="blog-section">
+            <h3>Use Cases</h3>
+            <p>
+              From content creation and marketing to drug discovery and gaming,
+              the applications of generative AI are vast and expanding.
+            </p>
+            <p>
+              In the realm of <strong>content creation</strong>, generative AI
+              tools can write articles, design graphics, produce music, and even
+              generate video content—all with minimal human input. This is
+              revolutionizing the creative industry by increasing productivity
+              and reducing time to market.
+            </p>
+            <p>
+              In <strong>marketing</strong>, brands use AI to generate
+              personalized emails, ad copy, and social media posts tailored to
+              different customer segments. These models help improve engagement
+              and conversion rates through smart automation.
+            </p>
+            <p>
+              In the field of <strong>healthcare and drug discovery</strong>,
+              generative models can design novel molecular structures,
+              accelerating the development of new treatments. AI can simulate
+              potential interactions and reduce the cost and time required for
+              R&D.
+            </p>
+            <p>
+              In the <strong>gaming industry</strong>, generative AI can create
+              new levels, characters, and storylines dynamically, offering
+              players endless possibilities and immersive experiences without
+              manual content creation by developers.
+            </p>
+            <p>
+              As the technology matures, we're likely to see even broader
+              adoption across sectors such as finance, education, fashion, and
+              beyond—reshaping how we work, play, and innovate.
+            </p>
+          </section>
+
+          <h3>Example Python Code: Connecting to Gemini Model 1.5 Flash</h3>
+          <p>
+            This example demonstrates how to connect to the Gemini model 1.5 Flash
+          </p>
+          <pre><code>
+            import os
+            import chainlit as cl
+            import google.generativeai as ai
+            from dotenv import load_dotenv
+            
+            # This is a stateless chatbot on chainlit
+            
+            load_dotenv()
+            
+            # gemini_api_key = os.getenv("GEMINI_API_KEY")
+            gemini_apikey = os.environ["GEMINI_API_KEY"]
+            
+            ai.configure(api_key=gemini_apikey)
+            
+            model = ai.GenerativeModel(model_name="gemini-2.0-flash") 
+            
+            @cl.on_chat_start
+            async def handle_start_chat():
+                await cl.Message(content="Hi! How can I help?").send()
+            
+            @cl.on_message
+            async def handle_message(message:cl.Message):
+                question = message.content
+            
+                response = model.generate_content(question)
+            
+                response_text = response.text if hasattr(response, "text") else ""
+            
+                await cl.Message(content=response_text).send()            
+          </code></pre>
+          <p>
+            This code snippet loads the Gemini 1.5 Flash model and generates
+            text based on the input prompt. The result is a completion of the
+            input, demonstrating how generative models can assist in text
+            generation tasks.
+          </p>
+
+          <div class="author">
+            <img src="https://i.pravatar.cc/80?img=5" alt="Author" />
+            <span>Written by Alex Smith</span>
+          </div>
+        </div>
+      </article>
+
+      <section class="comments-section">
+        <h3 style="margin-bottom: 1rem">Comments</h3>
+        <div class="comment">
+          <strong>@techlover</strong>: Super informative post! Thanks for the
+          clear code example.
+        </div>
+        <div class="comment">
+          <strong>@mlnoob</strong>: Would love a follow-up on fine-tuning GPT
+          models!
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 GenAI Zone. All rights reserved.</p>
+      <div class="footer-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </footer>
+  </body>
+</html>
