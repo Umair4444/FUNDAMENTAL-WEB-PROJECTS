@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeScript Documentation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo" />
+        <span>TypeScript Docs</span>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Handbook</a></li>
+          <li><a href="#">Playground</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar" id="sidebar">
+      <h3>Documentation</h3>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#basic-types">Basic Types</a></li>
+        <li><a href="#interfaces">Interfaces</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#dom-manipulation">DOM Manipulation</a></li>
+        <li><a href="#advanced">Advanced Types</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <h1>TypeScript Documentation</h1>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>
+          TypeScript is a typed superset of JavaScript that compiles to plain
+          JavaScript. It provides static typing, classes, and interfaces,
+          enabling developers to write more robust code.
+        </p>
+      </section>
+
+      <section id="installation">
+        <h2>Installation</h2>
+        <pre><code>npm install -g typescript</code></pre>
+        <p>Compile with:</p>
+        <pre><code>tsc filename.ts</code></pre>
+      </section>
+
+      <section id="basic-types">
+        <h2>Basic Types</h2>
+        <pre><code>// Boolean
+let isDone: boolean = false;
+
+// Number
+let decimal: number = 6;
+
+// String
+let color: string = "blue";
+
+// Array
+let list: number[] = [1, 2, 3];
+let list2: Array&lt;number&gt; = [1, 2, 3];</code></pre>
+      </section>
+
+      <section id="interfaces">
+        <h2>Interfaces</h2>
+        <pre><code>interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function greeter(person: Person) {
+  return `Hello, ${person.firstName} ${person.lastName}`;
+}</code></pre>
+      </section>
+
+      <section id="functions">
+        <h2>Functions</h2>
+        <pre><code>function add(x: number, y: number): number {
+  return x + y;
+}</code></pre>
+      </section>
+
+      <section id="classes">
+        <h2>Classes</h2>
+        <pre><code>class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  move(distance: number = 0) {
+    console.log(`${this.name} moved ${distance}m.`);
+  }
+}</code></pre>
+      </section>
+
+      <section id="generics">
+        <h2>Generics</h2>
+        <pre><code>function identity&lt;T&gt;(arg: T): T {
+  return arg;
+}</code></pre>
+      </section>
+
+      <section id="dom-manipulation">
+        <h2>DOM Manipulation</h2>
+        <pre><code>const button = document.querySelector("button");
+
+if (button) {
+  button.addEventListener("click", () => {
+    alert("Button clicked!");
+  });
+}</code></pre>
+      </section>
+
+      <section id="advanced">
+        <h2>Advanced Types</h2>
+        <pre><code>// Union
+function padLeft(value: string, padding: string | number): string {
+  if (typeof padding === "number") {
+    return Array(padding + 1).join(" ") + value;
+  }
+  return padding + value;
+}</code></pre>
+      </section>
+
+      <section id="configuration">
+        <h2>Configuration</h2>
+        <pre><code>{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true
+  }
+}</code></pre>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">GitHub</a>
+      <a href="#">Documentation</a>
+      <a href="#">Support</a>
+    </div>
+    <p>© 2025 TypeScript Docs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
