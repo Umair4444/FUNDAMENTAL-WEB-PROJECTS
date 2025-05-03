@@ -1,0 +1,137 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 5rem;
+}
+
+.timer_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.timer {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0px 2rem;
+  font-weight: bold;
+}
+
+.countdown_el {
+  text-align: center;
+  text-transform: capitalize;
+}
+.countdown_el span {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#user_input {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.info {
+  flex-direction: column;
+}
+
+.input {
+  height: 2rem;
+  font-size: 2rem;
+  width: 100%;
+  max-width: 15rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#button {
+  width: 100%;
+  max-width: 12rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+label {
+  margin: 0.5rem auto;
+  text-align: center;
+  text-transform: capitalize;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .timer {
+    font-size: 4rem;
+    margin: 0 1rem;
+  }
+
+  .countdown_el span {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .timer_container {
+    flex-direction: row;
+  }
+
+  .timer {
+    font-size: 3rem;
+    margin: 0 0.5rem;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+
+  #button {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+}
