@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("sandclock.jpg") no-repeat center/cover;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 2px aliceblue;
+  width: 100%;
+  max-width: 800px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0px 0px 6px 2px aliceblue, 0px 0px 6px 2px aliceblue;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+#myinput,
+#display,
+#btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#myinput input {
+  width: 10rem;
+}
+
+.counter {
+  margin: 5px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  width: 100px;
+  border: none;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.counter:hover {
+  border: 1px solid aqua;
+  box-shadow: 2px 2px 3px aliceblue;
+}
+
+.time,
+.seperator {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0.5rem;
+  min-width: 60px;
+}
+
+#set {
+  width: 100px;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.click {
+  width: 100px;
+  height: 40px;
+  margin: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.click:hover {
+  box-shadow: 2px 2px 3px aliceblue;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  #myinput input {
+    width: 8rem;
+  }
+
+  .time,
+  .seperator {
+    font-size: 2.2rem;
+  }
+
+  .counter {
+    width: 80px;
+    font-size: 0.9rem;
+  }
+
+  .click,
+  #set {
+    width: 90px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  #myinput input {
+    width: 7rem;
+  }
+}

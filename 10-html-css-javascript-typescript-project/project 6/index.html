@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COUNTDOWN TIMER</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">Alarm Clock</div>
+
+      <div id="myinput">
+        <input
+          type="number"
+          placeholder="Enter Hours"
+          class="counter"
+          id="hours-counter"
+        />
+        <input
+          type="number"
+          placeholder="Enter Minutes"
+          class="counter"
+          id="minutes-counter"
+        />
+        <input
+          type="number"
+          placeholder="Enter Seconds"
+          class="counter"
+          id="seconds-counter"
+        />
+        <button type="button" id="set">Set</button>
+      </div>
+
+      <div id="display">
+        <div class="hours time">xx</div>
+        <div class="seperator">:</div>
+        <div class="minutes time">xx</div>
+        <div class="seperator">:</div>
+        <div class="seconds time">xx</div>
+      </div>
+
+      <div id="btn">
+        <button type="button" class="click" id="start">Start</button>
+        <button type="button" class="click" id="pause">Pause</button>
+        <button type="button" class="click" id="reset">Reset</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
