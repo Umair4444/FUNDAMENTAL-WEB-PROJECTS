@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="calculator-container">
+      <div class="main-container">
+        <div class="screen">
+         
+          <input type="text" id="inputBox" placeholder="0" readonly />
+        </div>
+
+        <div class="button-grid">
+          <!-- Memory Functions Row -->
+          <div class="button-row">
+            <button class="memory-btn" data-value="MC">MC</button>
+            <button class="memory-btn" data-value="MR">MR</button>
+            <button class="memory-btn" data-value="M-">M-</button>
+            <button class="memory-btn" data-value="M+">M+</button>
+          </div>
+
+          <!-- Special Functions Row -->
+          <div class="button-row">
+            <button class="function-btn" data-value="√">√</button>
+            <button class="function-btn" data-value="x²">x²</button>
+            <button class="function-btn" data-value="%">%</button>
+            <button class="clear-btn ac" data-value="AC">AC</button>
+          </div>
+
+          <!-- Numbers and Operations -->
+          <div class="button-row">
+            <button class="number-btn" data-value="7">7</button>
+            <button class="number-btn" data-value="8">8</button>
+            <button class="number-btn" data-value="9">9</button>
+            <button class="operator-btn" data-value="/">/</button>
+          </div>
+
+          <div class="button-row">
+            <button class="number-btn" data-value="4">4</button>
+            <button class="number-btn" data-value="5">5</button>
+            <button class="number-btn" data-value="6">6</button>
+            <button class="operator-btn" data-value="*">*</button>
+          </div>
+
+          <div class="button-row">
+            <button class="number-btn" data-value="1">1</button>
+            <button class="number-btn" data-value="2">2</button>
+            <button class="number-btn" data-value="3">3</button>
+            <button class="operator-btn" data-value="-">-</button>
+          </div>
+
+          <div class="button-row">
+            <button class="number-btn" data-value="0">0</button>
+            <button class="number-btn" data-value=".">.</button>
+            <button class="clear-btn" data-value="CLEAR">⌫</button>
+            <button class="operator-btn" data-value="+">+</button>
+          </div>
+
+          <div class="button-row">
+            <button class="equal-btn" data-value="=">=</button>
+            <button class="history-btn" id="history-toggle">History</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- History Panel -->
+      <div class="history-container ">
+        <div class="history-header">
+          <h3>Calculation History</h3>
+        </div>
+        <div id="history" class="history-content"></div>
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
